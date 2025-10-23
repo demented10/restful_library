@@ -19,7 +19,7 @@ db-shell:
 	docker-compose exec db psql -U library_user -d library_db
 
 fixtures:
-	docker-compose exec web python utils/generate_fixtures.py
+	docker-compose exec web python scripts/generate_fixtures.py
 
 test:
 	docker-compose exec web python -m pytest
@@ -33,6 +33,6 @@ local-install:
 
 local-run:
 	poetry run uvicorn app.main:app --reload
- 
+
 local-fixtures:
-	poetry run python utils/generate_fixtures.py
+	poetry run python scripts/generate_fixtures.py
