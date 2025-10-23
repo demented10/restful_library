@@ -16,7 +16,7 @@ def generate_fixtures():
     db = SessionLocal()
 
     try:
-        # Очистка таблиц (осторожно - удаляет все данные!)
+        # Очистка таблиц
         print("Cleaning existing data...")
         db.query(BorrowingModel).delete()
         db.query(BookModel).delete()
